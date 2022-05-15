@@ -1,5 +1,32 @@
 let playerScore = 0;
 let computerScore = 0;
+const buttons = document.querySelector(`.buttons`);
+const playerScoreDiv = document.querySelector(`.player-score`);
+const computerScoreDiv = document.querySelector(`.computer-score`);
+
+buttons.addEventListener(`click`, (e) => {
+  const resultDiv = document.querySelector(`.result`);
+
+  if (e.target.value == undefined) {
+    return;
+  }
+
+  resultDiv.textContent = playRound(e.target.value, computerPlay());
+  if (playerScore == 5) {
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreDiv.textContent = `You: ${playerScore}`;
+    computerScoreDiv.textContent = `Computer: ${computerScore}`;
+    resultDiv.textContent = `You Win!`;
+  }
+  if (computerScore == 5) {
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreDiv.textContent = `You: ${playerScore}`;
+    computerScoreDiv.textContent = `Computer: ${computerScore}`;
+    resultDiv.textContent = `You Lose!`;
+  }
+});
 
 function computerPlay() {
   let random = Math.floor(Math.random() * 3) + 1;
@@ -15,44 +42,21 @@ function computerPlay() {
 
 function playRound(playerChoice, computerChoice) {
   const winConditions =
-    (playerChoice.toLowerCase() == `paper` && computerChoice == `rock`) ||
-    (playerChoice.toLowerCase() == `rock` && computerChoice == `scissors`) ||
-    (playerChoice.toLowerCase() == `scissors` && computerChoice == `paper`);
-  const invalidChoices =
-    playerChoice.toLowerCase() == `rock` ||
-    playerChoice.toLowerCase() == `paper` ||
-    playerChoice.toLowerCase() == `scissors`;
-
-  if (!invalidChoices) {
-    return `You entered an invalid choice`;
-  }
-
-  if (playerChoice.toLowerCase() == computerChoice) {
-    return `Draw! ${playerChoice.toLowerCase()} and ${computerChoice} is tied.`;
-  }
+    (playerChoice == `paper` && computerChoice == `rock`) ||
+    (playerChoice == `rock` && computerChoice == `scissors`) ||
+    (playerChoice == `scissors` && computerChoice == `paper`);
 
   if (winConditions) {
     playerScore++;
-    return `You win! ${playerChoice.toLowerCase()} beats ${computerChoice}`;
+    playerScoreDiv.textContent = `You: ${playerScore}`;
+    return `You win! ${playerChoice} beats ${computerChoice}`;
+  }
+
+  if (playerChoice == computerChoice) {
+    return `Draw! ${playerChoice} and ${computerChoice} is tied.`;
   }
 
   computerScore++;
-  return `You lose! ${playerChoice.toLowerCase()} loses against ${computerChoice}`;
+  computerScoreDiv.textContent = `Computer: ${computerScore}`;
+  return `You lose! ${playerChoice} loses against ${computerChoice}`;
 }
-
-function game() {
-  for (let i = 1; i < 6; i++ || playerScore < 3 || computerScore < 3) {
-    const playerChoice = prompt(`Rock, Paper, or Scissors?`);
-    console.log(playRound(playerChoice, computerPlay()));
-  }
-
-  if (playerScore > computerScore) {
-    console.log(`You Won! The score is ${playerScore} to ${computerScore}.`);
-  } else if (playerScore < computerScore) {
-    console.log(`You Lose! The score is ${playerScore} to ${computerScore}`);
-  } else {
-    console.log(`It's a draw`);
-  }
-}
-
-game();

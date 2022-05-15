@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Bangers', cursive;
+  font-family: 'Bebas Neue', cursive;
+}
+.start-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+.start-screen img {
+  width: 120vw;
+  margin-top: -10rem;
+}
+.start-screen button {
+  font-family: 'Bangers', cursive;
+  background-color: #e04f94;
+  color: #ffffff;
+  border-style: none;
+  border-radius: 2rem;
+  box-shadow: -0.75rem 0.75rem #a42a64;
+  font-size: 7vw;
+  height: 20vw;
+  width: 45vw;
+  margin-left: 1rem;
+}
+
+.game {
+  display: none;
+}
