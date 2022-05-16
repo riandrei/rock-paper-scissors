@@ -5,11 +5,6 @@
   padding: 0;
 }
 
-body {
-  font-family: 'Bangers', cursive;
-  font-family: 'Bebas Neue', cursive;
-}
-
 .start-screen {
   display: flex;
   align-items: center;
@@ -19,9 +14,8 @@ body {
   overflow: hidden;
 }
 .start-screen img {
-  width: 120vw;
-  margin-top: -30vw;
-  margin-bottom: -20vw;
+  width: 40vw;
+  margin-bottom: 2rem;
 }
 .start-screen button {
   font-family: 'Bangers', cursive;
@@ -29,7 +23,7 @@ body {
   color: #ffffff;
   border-style: none;
   border-radius: 1rem;
-  box-shadow: -0.6rem 0.6rem #a42a64;
+  box-shadow: -0.4rem 0.3rem #a42a64;
   font-size: 6vw;
   height: 18vw;
   width: 37vw;
@@ -39,28 +33,99 @@ body {
   display: none;
 }
 
+.play-screen {
+  font-family: 'Bebas Neue', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.play-screen .scores-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid black;
+  border-radius: 15px;
+  font-size: 15vw;
+  padding: 0.75rem;
+}
+.play-screen .scores-container hr {
+  border: none;
+  border-top: 2px solid black;
+  transform: rotate(90deg);
+  width: 12vw;
+}
+
+.play-screen .rps-match {
+  display: flex;
+  margin: 10vh 0;
+}
+.play-screen .rps-match .user-choice {
+  width: 20vw;
+  transform: scaleX(-1);
+}
+.play-screen .rps-match .vs-icon {
+  margin: 0 15vw;
+  width: 5vw;
+}
+.play-screen .rps-match .computer-choice {
+  width: 20vw;
+}
+
+.play-screen .match-prompt-container {
+  margin-bottom: 5rem;
+}
+.play-screen .match-prompt-container hr {
+  border: none;
+  width: 50vw;
+  border-top: 1.9px dashed black;
+}
+.play-screen .match-prompt-container h1 {
+  text-align: center;
+  font-size: 6vw;
+  margin: 1rem 0;
+}
+
+.play-screen .buttons button {
+  padding: 0 auto;
+  border: none;
+  border-radius: 5rem;
+  height: 15vw;
+  width: 15vw;
+}
+.rock-btn {
+  background-color: #e04f94;
+}
+.paper-btn {
+  background-color: #f9c800;
+  margin: 0 1rem;
+}
+.scissors-btn {
+  background-color: #01c9e5;
+}
+.play-screen .buttons button svg {
+  width: 2rem;
+}
+
 @media screen and (min-width: 481px) {
   /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
   .start-screen img {
-    width: 90vw;
-    margin-top: -24vw;
-    margin-bottom: -18vw;
+    width: 30vw;
   }
   .start-screen button {
     font-size: 5vw;
-    height: 12vw;
-    width: 30vw;
+    height: 10vw;
+    width: 25vw;
   }
 }
 @media screen and (min-width: 641px) {
   /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
   .start-screen img {
-    width: 70vw;
-    margin-top: -19vw;
-    margin-bottom: -14vw;
+    width: 25vw;
   }
   .start-screen button {
-    box-shadow: -0.6rem 0.6rem #a42a64;
     font-size: 4vw;
     height: 8vw;
     width: 23vw;
@@ -69,14 +134,11 @@ body {
 @media (min-width: 961px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
   .start-screen img {
-    width: 60vw;
-    margin-top: -16vw;
-    margin-bottom: -12vw;
+    width: 20vw;
   }
   .start-screen button {
-    box-shadow: -0.6rem 0.6rem #a42a64;
     font-size: 3vw;
-    height: 6vw;
-    width: 17vw;
+    height: 5vw;
+    width: 15vw;
   }
 }
