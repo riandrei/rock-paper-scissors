@@ -217,4 +217,35 @@
 }
 @media screen and (min-width: 961px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .play-screen .scores-container {
+    font-size: 5vw;
+    width: 14vw;
+  }
+  .play-screen .scores-container hr {
+    width: 4vw;
+  }
+
+  .play-screen .rps-match {
+    margin: 10vh 0 5vh 0;
+  }
+  .play-screen .rps-match .user-choice {
+    width: 14vw;
+  }
+  .play-screen .rps-match .vs-icon {
+    margin: 0 18vw;
+  }
+  .play-screen .rps-match .computer-choice {
+    width: 14vw;
+  }
+
+  .play-screen .match-prompt-container hr {
+    width: 25vw;
+  }
+  .play-screen .match-prompt-container h1 {
+    font-size: 2.2vw;
+  }
+  .play-screen .buttons button {
+    height: 5vw;
+    width: 5vw;
+  }
 }
