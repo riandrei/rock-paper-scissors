@@ -5,6 +5,9 @@
   padding: 0;
 }
 
+.hide {
+  display: none;
+}
 .start-screen {
   display: flex;
   align-items: center;
@@ -29,8 +32,39 @@
   width: 37vw;
   margin-left: 1rem;
 }
-.hide {
-  display: none;
+
+@media screen and (min-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  .start-screen img {
+    width: 30vw;
+  }
+  .start-screen button {
+    font-size: 5vw;
+    height: 10vw;
+    width: 25vw;
+  }
+}
+@media screen and (min-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .start-screen img {
+    width: 25vw;
+  }
+  .start-screen button {
+    font-size: 4vw;
+    height: 8vw;
+    width: 23vw;
+  }
+}
+@media (min-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .start-screen img {
+    width: 20vw;
+  }
+  .start-screen button {
+    font-size: 3vw;
+    height: 5vw;
+    width: 15vw;
+  }
 }
 
 .play-screen {
@@ -50,6 +84,7 @@
   border-radius: 15px;
   font-size: 15vw;
   padding: 0.75rem;
+  width: 35vw;
 }
 .play-screen .scores-container hr {
   border: none;
@@ -111,34 +146,75 @@
 
 @media screen and (min-width: 481px) {
   /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-  .start-screen img {
-    width: 30vw;
-  }
-  .start-screen button {
-    font-size: 5vw;
-    height: 10vw;
+  .play-screen .scores-container {
+    font-size: 12vw;
     width: 25vw;
+  }
+  .play-screen .scores-container hr {
+    width: 8vw;
+  }
+
+  .play-screen .rps-match .user-choice {
+    width: 15vw;
+  }
+  .play-screen .rps-match .vs-icon {
+    margin: 0 15vw;
+    width: 4vw;
+  }
+  .play-screen .rps-match .computer-choice {
+    width: 15vw;
+  }
+
+  .play-screen .match-prompt-container hr {
+    width: 40vw;
+  }
+  .play-screen .match-prompt-container h1 {
+    font-size: 4vw;
+  }
+
+  .play-screen .buttons button {
+    height: 10vw;
+    width: 10vw;
   }
 }
 @media screen and (min-width: 641px) {
   /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-  .start-screen img {
-    width: 25vw;
-  }
-  .start-screen button {
-    font-size: 4vw;
-    height: 8vw;
-    width: 23vw;
-  }
-}
-@media (min-width: 961px) {
-  /* tablet, landscape iPad, lo-res laptops ands desktops */
-  .start-screen img {
+  .play-screen .scores-container {
+    font-size: 8vw;
     width: 20vw;
   }
-  .start-screen button {
-    font-size: 3vw;
-    height: 5vw;
-    width: 15vw;
+  .play-screen .scores-container hr {
+    width: 6vw;
   }
+
+  .play-screen .rps-match {
+    margin: 10vh 0 5vh 0;
+  }
+  .play-screen .rps-match .user-choice {
+    width: 18vw;
+  }
+  .play-screen .rps-match .vs-icon {
+    margin: 0 18vw;
+  }
+  .play-screen .rps-match .computer-choice {
+    width: 18vw;
+  }
+
+  .play-screen .match-prompt-container {
+    margin-bottom: 3rem;
+  }
+  .play-screen .match-prompt-container hr {
+    width: 35vw;
+  }
+  .play-screen .match-prompt-container h1 {
+    font-size: 3vw;
+  }
+
+  .play-screen .buttons button {
+    height: 7vw;
+    width: 7vw;
+  }
+}
+@media screen and (min-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
 }
