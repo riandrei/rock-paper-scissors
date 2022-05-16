@@ -97,9 +97,11 @@
   display: flex;
   margin: 10vh 0;
 }
+.play-screen .rps-match .flip {
+  transform: scaleX(-1);
+}
 .play-screen .rps-match .user-choice {
   width: 20vw;
-  transform: scaleX(-1);
 }
 .play-screen .rps-match .vs-icon {
   margin: 0 15vw;
@@ -129,6 +131,9 @@
   border-radius: 5rem;
   height: 15vw;
   width: 15vw;
+}
+.play-screen .buttons button:hover {
+  cursor: pointer;
 }
 .rock-btn {
   background-color: #e04f94;

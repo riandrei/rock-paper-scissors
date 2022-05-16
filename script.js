@@ -10,6 +10,7 @@ startScreen.addEventListener(`click`, (e) => {
   if (e.target.tagName != `BUTTON`) {
     return;
   }
+
   playScreen.classList.add(`play-screen`);
   playScreen.classList.remove(`hide`);
   startScreen.classList.add(`hide`);
@@ -48,6 +49,9 @@ function playRound(playerChoice, computerChoice, resultDiv) {
     (playerChoice == `rock` && computerChoice == `scissors`) ||
     (playerChoice == `scissors` && computerChoice == `paper`);
   const linebreak = document.createElement(`br`);
+
+  updateChoiceIcon(playerChoice, computerChoice);
+
   if (winConditions) {
     playerScore++;
     playerScoreDiv.textContent = playerScore;
@@ -73,4 +77,32 @@ function computerPlay() {
     return `paper`;
   }
   return `scissors`;
+}
+
+// updates the rock-paper-scissors picture depending on what the user and computer choice
+function updateChoiceIcon(playerChoice, computerChoice) {
+  const playerChoiceBox = document.querySelector(`.user-choice`);
+  const computerChoiceBox = document.querySelector(`.computer-choice`);
+
+  if (playerChoice == `rock`) {
+    playerChoiceBox.src = 'images/rock.svg';
+  }
+  if (playerChoice == `paper`) {
+    playerChoiceBox.src = `images/paper.svg`;
+  }
+  if (playerChoice == `scissors`) {
+    playerChoiceBox.src = `images/scissors.svg`;
+  }
+
+  playerChoiceBox.classList.add(`flip`);
+
+  if (computerChoice == `rock`) {
+    computerChoiceBox.src = 'images/rock.svg';
+  }
+  if (computerChoice == `paper`) {
+    computerChoiceBox.src = `images/paper.svg`;
+  }
+  if (computerChoice == `scissors`) {
+    computerChoiceBox.src = `images/scissors.svg`;
+  }
 }
