@@ -13,12 +13,11 @@ startScreen.addEventListener(`click`, (e) => {
   if (e.target.tagName != `BUTTON`) {
     return;
   }
-
-  gameScreen.classList.add(`game-screen`);
-  gameScreen.classList.remove(`hide`);
-
-  startScreen.classList.add(`hide`);
-  startScreen.classList.remove(`start-screen`);
+  setTimeout(() => {
+    gameScreen.classList.add(`game-screen`);
+    startScreen.classList.add(`hide`);
+    startScreen.classList.remove(`start-screen`);
+  }, 100);
 });
 
 choicesContainer.addEventListener(`click`, (e) => {

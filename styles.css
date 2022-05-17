@@ -31,6 +31,11 @@
   height: 18vw;
   width: 37vw;
   margin-left: 1rem;
+  transition: all 0.2s;
+}
+.start-screen button:active {
+  box-shadow: none;
+  margin: 0.4rem 0 0.3rem 0;
 }
 
 @media screen and (min-width: 481px) {
@@ -74,6 +79,7 @@
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+  transition-delay: 1s;
 }
 
 .scores-container {
@@ -132,6 +138,7 @@
   border: none;
   border-radius: 5rem;
   height: 15vw;
+  transition: all 0.2s;
   width: 15vw;
 }
 .choices-container button:hover {
@@ -142,10 +149,19 @@
 }
 .paper-btn {
   background-color: #f9c800;
-  margin: 0 1rem;
+  margin: 0 2rem;
 }
 .scissors-btn {
   background-color: #01c9e5;
+}
+.rock-btn:active {
+  background-color: #e181af;
+}
+.paper-btn:active {
+  background-color: #f5d348;
+}
+.scissors-btn:active {
+  background-color: #5acede;
 }
 .choices-container button svg {
   width: 2rem;
