@@ -11,25 +11,27 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="start-screen">
+    <section class="start-screen">
       <img src="images/rps-logo.svg" alt="rps-logo" />
-      <button id="start-play">PLAY GAME</button>
-    </div>
+      <button>PLAY GAME</button>
+    </section>
 
-    <div class="hide">
+    <section class="hide">
       <div class="scores-container">
         <div class="score-labels">
           <p>YOU</p>
           <p>COM</p>
         </div>
+
         <hr />
+
         <div class="scores">
           <p class="player-score">0</p>
           <p class="computer-score">0</p>
         </div>
       </div>
 
-      <div class="rps-match">
+      <div class="match-icons">
         <img src="images/question-mark.svg" class="user-choice" alt="User Choice" />
         <img src="images/vs.svg" class="vs-icon" alt="Versus Icon" />
         <img src="images/question-mark.svg" class="computer-choice" alt="Computer Choice" />
@@ -37,11 +39,11 @@
 
       <div class="match-prompt-container">
         <hr />
-        <h1 class="result-prompt">START!</h1>
+        <h1 class="match-prompt">START!</h1>
         <hr />
       </div>
 
-      <div class="buttons">
+      <div class="choices-container">
         <button data-value="rock" class="rock-btn">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-value="rock">
             <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -74,14 +76,12 @@
         </button>
       </div>
 
-      <div></div>
-      <div class="result"></div>
-      <div class="final-result hide">
+      <div class="final-result-container hide">
         <p class="win-lose-message">Congratulations!</p>
         <p class="final-score"></p>
         <button class="retry-btn"><img src="images/again.svg" alt="retry-button" /></button>
       </div>
-    </div>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>

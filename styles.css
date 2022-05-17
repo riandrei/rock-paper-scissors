@@ -4,10 +4,10 @@
   margin: 0;
   padding: 0;
 }
-
 .hide {
   display: none;
 }
+
 .start-screen {
   display: flex;
   align-items: center;
@@ -67,7 +67,7 @@
   }
 }
 
-.play-screen {
+.game-screen {
   font-family: 'Bebas Neue', cursive;
   display: flex;
   align-items: center;
@@ -76,7 +76,7 @@
   height: 100vh;
 }
 
-.play-screen .scores-container {
+.scores-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,55 +86,55 @@
   padding: 0.75rem;
   width: 35vw;
 }
-.play-screen .scores-container hr {
+.scores-container hr {
   border: none;
   border-top: 2px solid black;
   transform: rotate(90deg);
   width: 12vw;
 }
 
-.play-screen .rps-match {
+.match-icons {
   display: flex;
   height: 27.5vh;
   margin: 10vh 0;
   user-select: none;
 }
-.play-screen .rps-match .flip {
+.flip {
   transform: scaleX(-1);
 }
-.play-screen .rps-match .user-choice {
+.user-choice {
   width: 20vw;
 }
-.play-screen .rps-match .vs-icon {
+.vs-icon {
   margin: 0 15vw;
   width: 5vw;
 }
-.play-screen .rps-match .computer-choice {
+.computer-choice {
   width: 20vw;
 }
 
-.play-screen .match-prompt-container {
+.match-prompt-container {
   margin-bottom: 5rem;
 }
-.play-screen .match-prompt-container hr {
+.match-prompt-container hr {
   border: none;
   width: 50vw;
   border-top: 1.9px dashed black;
 }
-.play-screen .match-prompt-container h1 {
+.match-prompt-container h1 {
   text-align: center;
   font-size: 6vw;
   margin: 1rem 0;
 }
 
-.play-screen .buttons button {
+.choices-container button {
   padding: 0 auto;
   border: none;
   border-radius: 5rem;
   height: 15vw;
   width: 15vw;
 }
-.play-screen .buttons button:hover {
+.choices-container button:hover {
   cursor: pointer;
 }
 .rock-btn {
@@ -147,11 +147,11 @@
 .scissors-btn {
   background-color: #01c9e5;
 }
-.play-screen .buttons button svg {
+.choices-container button svg {
   width: 2rem;
 }
 
-.final-result {
+.final-result-container {
   background-color: rgb(245, 244, 244);
   position: absolute;
   border-radius: 2rem;
@@ -160,20 +160,20 @@
   line-height: 6vw;
   width: 65vw;
 }
-.final-result button {
+.final-result-container button {
   border: none;
   border-radius: 50rem;
   height: 12vw;
   width: 12vw;
   margin-top: 5vw;
 }
-.final-result button img {
+.final-result-container button img {
   fill: white;
   margin: 1vw 0.4vw 0 0;
   width: 4.5vw;
   height: 4.5vw;
 }
-.congratulations {
+.winning-popup {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,10 +181,10 @@
   border: 1.5rem solid rgb(68, 222, 68);
   box-shadow: 0 0 0.1px 100rem rgba(0, 0, 0, 0.75);
 }
-.congratulations button {
+.winning-popup button {
   background-color: rgb(68, 222, 68);
 }
-.better-luck {
+.losing-popup {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,54 +192,54 @@
   border: 2rem solid rgb(216, 56, 31);
   box-shadow: 0 0 0.1px 100rem rgba(216, 56, 31, 0.75);
 }
-.better-luck button {
+.losing-popup button {
   background-color: rgb(216, 56, 31);
 }
 
 @media screen and (min-width: 481px) {
   /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-  .play-screen .scores-container {
+  .scores-container {
     font-size: 12vw;
     width: 25vw;
   }
-  .play-screen .scores-container hr {
+  .scores-container hr {
     width: 8vw;
   }
 
-  .play-screen .rps-match .user-choice {
+  .user-choice {
     width: 15vw;
   }
-  .play-screen .rps-match .vs-icon {
+  .vs-icon {
     margin: 0 15vw;
     width: 4vw;
   }
-  .play-screen .rps-match .computer-choice {
+  .computer-choice {
     width: 15vw;
   }
 
-  .play-screen .match-prompt-container hr {
+  .match-prompt-container hr {
     width: 40vw;
   }
-  .play-screen .match-prompt-container h1 {
+  .match-prompt-container h1 {
     font-size: 4vw;
   }
 
-  .play-screen .buttons button {
+  .choices-container button {
     height: 10vw;
     width: 10vw;
   }
 
-  .final-result {
+  .final-result-container {
     font-size: 7vw;
     max-height: 40vw;
     max-width: 58vw;
   }
-  .final-result button {
+  .final-result-container button {
     height: 10vw;
     margin-top: 3vw;
     width: 10vw;
   }
-  .final-result button img {
+  .final-result-container button img {
     margin: 1vw 0.4vw 0 0;
     width: 4vw;
     height: 4vw;
@@ -247,54 +247,54 @@
 }
 @media screen and (min-width: 641px) {
   /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-  .play-screen .scores-container {
+  .scores-container {
     font-size: 8vw;
     width: 20vw;
   }
-  .play-screen .scores-container hr {
+  .scores-container hr {
     width: 6vw;
   }
 
-  .play-screen .rps-match {
+  .match-icons {
     margin: 10vh 0 5vh 0;
   }
-  .play-screen .rps-match .user-choice {
+  .user-choice {
     width: 18vw;
   }
-  .play-screen .rps-match .vs-icon {
+  .vs-icon {
     margin: 0 18vw;
   }
-  .play-screen .rps-match .computer-choice {
+  .computer-choice {
     width: 18vw;
   }
 
-  .play-screen .match-prompt-container {
+  .match-prompt-container {
     margin-bottom: 3rem;
   }
-  .play-screen .match-prompt-container hr {
+  .match-prompt-container hr {
     width: 35vw;
   }
-  .play-screen .match-prompt-container h1 {
+  .match-prompt-container h1 {
     font-size: 3vw;
   }
 
-  .play-screen .buttons button {
+  .choices-container button {
     height: 7vw;
     width: 7vw;
   }
 
-  .final-result {
+  .final-result-container {
     font-size: 5vw;
     line-height: 4vw;
     max-height: 28vw;
     max-width: 48vw;
   }
-  .final-result button {
+  .final-result-container button {
     height: 8vw;
     margin-top: 3vw;
     width: 8vw;
   }
-  .final-result button img {
+  .final-result-container button img {
     margin: 0.7vw 0.1vw 0 0;
     width: 3vw;
     height: 3vw;
@@ -302,50 +302,50 @@
 }
 @media screen and (min-width: 961px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
-  .play-screen .scores-container {
+  .scores-container {
     font-size: 5vw;
     width: 14vw;
   }
-  .play-screen .scores-container hr {
+  .scores-container hr {
     width: 4vw;
   }
 
-  .play-screen .rps-match {
+  .match-icons {
     margin: 10vh 0 5vh 0;
   }
-  .play-screen .rps-match .user-choice {
+  .user-choice {
     width: 14vw;
   }
-  .play-screen .rps-match .vs-icon {
+  .vs-icon {
     margin: 0 18vw;
   }
-  .play-screen .rps-match .computer-choice {
+  .computer-choice {
     width: 14vw;
   }
 
-  .play-screen .match-prompt-container hr {
+  .match-prompt-container hr {
     width: 25vw;
   }
-  .play-screen .match-prompt-container h1 {
+  .match-prompt-container h1 {
     font-size: 2.2vw;
   }
-  .play-screen .buttons button {
+  .choices-container button {
     height: 5vw;
     width: 5vw;
   }
 
-  .final-result {
+  .final-result-container {
     font-size: 4vw;
     line-height: 4vw;
     max-height: 24vw;
     max-width: 44vw;
   }
-  .final-result button {
+  .final-result-container button {
     height: 5.5vw;
     margin-top: 3vw;
     width: 5.5vw;
   }
-  .final-result button img {
+  .final-result-container button img {
     margin: 0.7vw 0.1vw 0 0;
     width: 2.5vw;
     height: 2.5vw;

@@ -1,77 +1,66 @@
 let playerScore = 0;
 let computerScore = 0;
-const buttons = document.querySelector(`.buttons`);
-const playerScoreDiv = document.querySelector(`.player-score`);
+const choicesContainer = document.querySelector(`.choices-container`);
 const computerScoreDiv = document.querySelector(`.computer-score`);
-const startScreen = document.querySelector(`.start-screen`);
-const playScreen = document.querySelector(`.hide`);
-const finalResult = document.querySelector(`.final-result`);
-const finalScore = document.querySelector(`.final-score`);
-const wlMessage = document.querySelector(`.win-lose-message`);
+const finalResultContainer = document.querySelector(`.final-result-container`);
+const gameScreen = document.querySelector(`.hide`);
+const playerScoreDiv = document.querySelector(`.player-score`);
+const resultDiv = document.querySelector(`.match-prompt`);
 const retryButton = document.querySelector(`.retry-btn`);
+const startScreen = document.querySelector(`.start-screen`);
 
 startScreen.addEventListener(`click`, (e) => {
   if (e.target.tagName != `BUTTON`) {
     return;
   }
 
-  playScreen.classList.add(`play-screen`);
-  playScreen.classList.remove(`hide`);
+  gameScreen.classList.add(`game-screen`);
+  gameScreen.classList.remove(`hide`);
+
   startScreen.classList.add(`hide`);
   startScreen.classList.remove(`start-screen`);
 });
 
-buttons.addEventListener(`click`, (e) => {
-  const resultDiv = document.querySelector(`.result-prompt`);
+choicesContainer.addEventListener(`click`, (e) => {
+  const finalScore = document.querySelector(`.final-score`);
+  const wlMessage = document.querySelector(`.win-lose-message`);
 
   if (e.target.dataset.value == undefined) {
     return;
   }
+  // calls the playRound function and passes in the value of what was clicked in the choicesContainer
+  resultDiv.textContent = playRound(e.target.dataset.value, computerPlay());
 
-  resultDiv.textContent = playRound(e.target.dataset.value, computerPlay(), resultDiv);
+  if (playerScore == 5 || computerScore == 5) {
+    playerScore == 5
+      ? ((wlMessage.textContent = `Congratulations!`), finalResultContainer.classList.add(`winning-popup`))
+      : ((wlMessage.textContent = `Better luck next time!`), finalResultContainer.classList.add(`losing-popup`));
 
-  if (playerScore == 5) {
-    wlMessage.textContent = `Congratulations!`;
     finalScore.textContent = `The final score is ${playerScore} : ${computerScore}`;
-
-    playerScore = 0;
-    computerScore = 0;
-
-    resultDiv.textContent = `Start!`;
-    playerScoreDiv.textContent = playerScore;
-    computerScoreDiv.textContent = computerScore;
-
-    finalResult.classList.add(`congratulations`);
-  }
-
-  if (computerScore == 5) {
-    wlMessage.textContent = `Better luck next time!`;
-    finalScore.textContent = `The final score is ${playerScore} : ${computerScore}`;
-
-    resultDiv.textContent = `Start!`;
-    playerScore = 0;
-    computerScore = 0;
-
-    playerScoreDiv.textContent = playerScore;
-    computerScoreDiv.textContent = computerScore;
-
-    finalResult.classList.add(`better-luck`);
   }
 });
 
-retryButton.addEventListener(`click`, (e) => {
-  finalResult.classList.remove(`congratulations`);
-  finalResult.classList.remove(`better-luck`);
+// removes the pop-up window if you lose or win and resets everything to the original values
+retryButton.addEventListener(`click`, () => {
+  finalResultContainer.classList.remove(`winning-popup`);
+  finalResultContainer.classList.remove(`losing-popup`);
+
+  playerScore = 0;
+  computerScore = 0;
+
+  resultDiv.textContent = `Start!`;
+  playerScoreDiv.textContent = playerScore;
+  computerScoreDiv.textContent = computerScore;
 });
 
-function playRound(playerChoice, computerChoice, resultDiv) {
+// updates the scores when player or computer wins and returns a string of how the player won, lost, or draw
+function playRound(playerChoice, computerChoice) {
+  updateChoiceIcon(playerChoice, computerChoice);
+
   const winConditions =
     (playerChoice == `paper` && computerChoice == `rock`) ||
     (playerChoice == `rock` && computerChoice == `scissors`) ||
     (playerChoice == `scissors` && computerChoice == `paper`);
-  const linebreak = document.createElement(`br`);
-
-  updateChoiceIcon(playerChoice, computerChoice);
 
   if (winConditions) {
     playerScore++;
@@ -88,6 +77,7 @@ function playRound(playerChoice, computerChoice, resultDiv) {
   return `You lose! \n${playerChoice} loses against ${computerChoice}`;
 }
 
+// randomly returns rock, paper, scissor needed for playRound function
 function computerPlay() {
   let random = Math.floor(Math.random() * 3) + 1;
 
