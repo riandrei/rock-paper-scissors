@@ -95,7 +95,9 @@
 
 .play-screen .rps-match {
   display: flex;
+  height: 27.5vh;
   margin: 10vh 0;
+  user-select: none;
 }
 .play-screen .rps-match .flip {
   transform: scaleX(-1);

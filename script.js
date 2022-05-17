@@ -24,11 +24,11 @@ startScreen.addEventListener(`click`, (e) => {
 buttons.addEventListener(`click`, (e) => {
   const resultDiv = document.querySelector(`.result-prompt`);
 
-  if (e.target.value == undefined) {
+  if (e.target.dataset.value == undefined) {
     return;
   }
 
-  resultDiv.textContent = playRound(e.target.value, computerPlay(), resultDiv);
+  resultDiv.textContent = playRound(e.target.dataset.value, computerPlay(), resultDiv);
 
   if (playerScore == 5) {
     wlMessage.textContent = `Congratulations!`;
@@ -63,6 +63,7 @@ retryButton.addEventListener(`click`, (e) => {
   finalResult.classList.remove(`congratulations`);
   finalResult.classList.remove(`better-luck`);
 });
+
 function playRound(playerChoice, computerChoice, resultDiv) {
   const winConditions =
     (playerChoice == `paper` && computerChoice == `rock`) ||
