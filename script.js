@@ -5,6 +5,10 @@ const playerScoreDiv = document.querySelector(`.player-score`);
 const computerScoreDiv = document.querySelector(`.computer-score`);
 const startScreen = document.querySelector(`.start-screen`);
 const playScreen = document.querySelector(`.hide`);
+const finalResult = document.querySelector(`.final-result`);
+const finalScore = document.querySelector(`.final-score`);
+const wlMessage = document.querySelector(`.win-lose-message`);
+const retryButton = document.querySelector(`.retry-btn`);
 
 startScreen.addEventListener(`click`, (e) => {
   if (e.target.tagName != `BUTTON`) {
@@ -27,22 +31,38 @@ buttons.addEventListener(`click`, (e) => {
   resultDiv.textContent = playRound(e.target.value, computerPlay(), resultDiv);
 
   if (playerScore == 5) {
+    wlMessage.textContent = `Congratulations!`;
+    finalScore.textContent = `The final score is ${playerScore} : ${computerScore}`;
+
     playerScore = 0;
     computerScore = 0;
+
+    resultDiv.textContent = `Start!`;
     playerScoreDiv.textContent = playerScore;
     computerScoreDiv.textContent = computerScore;
-    resultDiv.textContent = `You Win!`;
+
+    finalResult.classList.add(`congratulations`);
   }
 
   if (computerScore == 5) {
+    wlMessage.textContent = `Better luck next time!`;
+    finalScore.textContent = `The final score is ${playerScore} : ${computerScore}`;
+
+    resultDiv.textContent = `Start!`;
     playerScore = 0;
     computerScore = 0;
+
     playerScoreDiv.textContent = playerScore;
     computerScoreDiv.textContent = computerScore;
-    resultDiv.textContent = `You Lose!`;
+
+    finalResult.classList.add(`better-luck`);
   }
 });
 
+retryButton.addEventListener(`click`, (e) => {
+  finalResult.classList.remove(`congratulations`);
+  finalResult.classList.remove(`better-luck`);
+});
 function playRound(playerChoice, computerChoice, resultDiv) {
   const winConditions =
     (playerChoice == `paper` && computerChoice == `rock`) ||

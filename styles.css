@@ -149,6 +149,51 @@
   width: 2rem;
 }
 
+.final-result {
+  background-color: rgb(245, 244, 244);
+  position: absolute;
+  border-radius: 2rem;
+  font-size: 8vw;
+  height: 50vw;
+  line-height: 6vw;
+  width: 65vw;
+}
+.final-result button {
+  border: none;
+  border-radius: 50rem;
+  height: 12vw;
+  width: 12vw;
+  margin-top: 5vw;
+}
+.final-result button img {
+  fill: white;
+  margin: 1vw 0.4vw 0 0;
+  width: 4.5vw;
+  height: 4.5vw;
+}
+.congratulations {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1.5rem solid rgb(68, 222, 68);
+  box-shadow: 0 0 0.1px 100rem rgba(0, 0, 0, 0.75);
+}
+.congratulations button {
+  background-color: rgb(68, 222, 68);
+}
+.better-luck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2rem solid rgb(216, 56, 31);
+  box-shadow: 0 0 0.1px 100rem rgba(216, 56, 31, 0.75);
+}
+.better-luck button {
+  background-color: rgb(216, 56, 31);
+}
+
 @media screen and (min-width: 481px) {
   /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
   .play-screen .scores-container {
@@ -180,6 +225,22 @@
   .play-screen .buttons button {
     height: 10vw;
     width: 10vw;
+  }
+
+  .final-result {
+    font-size: 7vw;
+    max-height: 40vw;
+    max-width: 58vw;
+  }
+  .final-result button {
+    height: 10vw;
+    margin-top: 3vw;
+    width: 10vw;
+  }
+  .final-result button img {
+    margin: 1vw 0.4vw 0 0;
+    width: 4vw;
+    height: 4vw;
   }
 }
 @media screen and (min-width: 641px) {
@@ -219,6 +280,23 @@
     height: 7vw;
     width: 7vw;
   }
+
+  .final-result {
+    font-size: 5vw;
+    line-height: 4vw;
+    max-height: 28vw;
+    max-width: 48vw;
+  }
+  .final-result button {
+    height: 8vw;
+    margin-top: 3vw;
+    width: 8vw;
+  }
+  .final-result button img {
+    margin: 0.7vw 0.1vw 0 0;
+    width: 3vw;
+    height: 3vw;
+  }
 }
 @media screen and (min-width: 961px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
@@ -252,5 +330,22 @@
   .play-screen .buttons button {
     height: 5vw;
     width: 5vw;
+  }
+
+  .final-result {
+    font-size: 4vw;
+    line-height: 4vw;
+    max-height: 24vw;
+    max-width: 44vw;
+  }
+  .final-result button {
+    height: 5.5vw;
+    margin-top: 3vw;
+    width: 5.5vw;
+  }
+  .final-result button img {
+    margin: 0.7vw 0.1vw 0 0;
+    width: 2.5vw;
+    height: 2.5vw;
   }
 }
