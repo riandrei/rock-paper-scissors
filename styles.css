@@ -176,12 +176,14 @@
   line-height: 6vw;
   width: 65vw;
 }
+.final-score {
+  margin-bottom: 5vw;
+}
 .final-result-container button {
   border: none;
   border-radius: 50rem;
   height: 12vw;
   width: 12vw;
-  margin-top: 5vw;
 }
 .final-result-container button img {
   fill: white;
@@ -195,10 +197,16 @@
   justify-content: center;
   flex-direction: column;
   border: 1.5rem solid rgb(68, 222, 68);
-  box-shadow: 0 0 0.1px 100rem rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 0.1px 100rem rgba(68, 222, 68, 0.75);
 }
 .winning-popup button {
   background-color: rgb(68, 222, 68);
+  box-shadow: -0.4rem 0.3rem #2d962d;
+  transition: all 0.2s;
+}
+.winning-popup button:active {
+  box-shadow: none;
+  margin: 0.4rem 0 0.3rem 0;
 }
 .losing-popup {
   display: flex;
@@ -210,6 +218,12 @@
 }
 .losing-popup button {
   background-color: rgb(216, 56, 31);
+  box-shadow: -0.4rem 0.3rem #752013;
+  transition: all 0.2s;
+}
+.losing-popup button:active {
+  box-shadow: none;
+  margin: 0.4rem 0 0.3rem 0;
 }
 
 @media screen and (min-width: 481px) {
@@ -250,9 +264,11 @@
     max-height: 40vw;
     max-width: 58vw;
   }
+  .final-score {
+    margin-bottom: 3vw;
+  }
   .final-result-container button {
     height: 10vw;
-    margin-top: 3vw;
     width: 10vw;
   }
   .final-result-container button img {
@@ -307,7 +323,6 @@
   }
   .final-result-container button {
     height: 8vw;
-    margin-top: 3vw;
     width: 8vw;
   }
   .final-result-container button img {
@@ -358,7 +373,6 @@
   }
   .final-result-container button {
     height: 5.5vw;
-    margin-top: 3vw;
     width: 5.5vw;
   }
   .final-result-container button img {

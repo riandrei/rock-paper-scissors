@@ -13,6 +13,8 @@ startScreen.addEventListener(`click`, (e) => {
   if (e.target.tagName != `BUTTON`) {
     return;
   }
+
+  // added some delay to let button click effect finish
   setTimeout(() => {
     gameScreen.classList.add(`game-screen`);
     startScreen.classList.add(`hide`);
